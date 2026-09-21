@@ -56,9 +56,10 @@ your interpretation.
 
 ## Part 3 — Likelihood analysis
 
-5. Run the Lab 3 unbinned likelihood at the source position: report
-   $\hat n_s$ and TS. You can lift the code directly from
-   `03_allsky_search.ipynb` — it is one pixel of that map.
+5. Run the same unbinned likelihood you built in Lab 3 (Braun likelihood,
+   $n_s$-only fit at fixed $\gamma = 2$), but evaluated at a single point:
+   the source position. Report $\hat n_s$ and TS — this is exactly one pixel
+   of the all-sky map you already produced.
 6. **Calibrate the p-value with scrambling**: generate ≥ 1000
    pseudo-experiments by randomizing the events' RA (keep dec, energy,
    AngErr fixed), refit each, and take the fraction of trials with
