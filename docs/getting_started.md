@@ -1,8 +1,8 @@
 # Getting started — read the data and take a first look
 
-*First task of the IceTracks-DR2 data-analysis lab. Complete this before
-opening `notebooks/01_explore_data.ipynb`: the goal is to get comfortable
-with the raw data yourself, not to rely on a helper library from the start.*
+*First task of the IceTracks-DR2 data-analysis lab. The goal is to get
+comfortable with the raw data yourself, writing your own code — not to rely
+on a helper library from the start.*
 
 ## Background
 
@@ -45,16 +45,16 @@ Go to the Dataverse record at
 season (`IC40_exp.csv`, `IC59_exp.csv`, `IC79_exp.csv`,
 `IC86_I_exp.csv` … `IC86_XI_exp.csv`). This is about 85 MB in total. You do
 **not** need the `irfs/` folder (effective areas, smearing matrices) for this
-task — that is only needed starting from Lab 2, and the notebooks download it
-automatically when needed.
+task — that is only needed starting from Lab 2, and can be downloaded
+automatically later with `icelab.download_irfs()`.
 
-Place the `events/` folder so it sits **next to** the repository, not inside
-it:
+Place the `events/` folder so it sits **next to** this repository, not
+inside it:
 
 ```
 <data folder>/            # e.g. dataverse_files/
 ├── events/IC*_exp.csv
-└── icetracks-dr2-lab/    # this repository
+└── <this repository>/
 ```
 
 If you keep the data somewhere else, set the environment variable
@@ -62,15 +62,16 @@ If you keep the data somewhere else, set the environment variable
 
 ### 3. Where to work
 
-Either open a notebook (`jupyter lab`, then create a new notebook under
-`notebooks/`) or write a plain Python script — your choice. If you want to
-reuse the course's helper module (`src/icelab.py`, optional — see Step 1
-below), add its folder to the Python path first:
+Write your own Jupyter notebook (`jupyter lab`) or a plain Python script —
+your choice, and you decide where in the repository to put it. If you want
+to reuse the course's helper module (`src/icelab.py`, optional — see Step 1
+below), add its folder to the Python path first, adjusting the relative path
+to wherever you placed your file:
 
 ```python
 import sys
 from pathlib import Path
-sys.path.insert(0, str(Path("../src").resolve()))
+sys.path.insert(0, str(Path("src").resolve()))  # e.g. "../src" if you work one level down
 import icelab
 ```
 
@@ -145,10 +146,9 @@ this is a warm-up, not the final assignment.
 
 ## Where this fits in the course
 
-Once you're done, compare your approach with
-`notebooks/01_explore_data.ipynb`, which covers the same ground and goes a
-bit further (per-season rates, more plots). The physics behind the
-hemisphere split is explained in detail in
+Once you're done, your instructor will walk through a worked version of this
+same exploration, going a bit further (per-season rates, more plots). The
+physics behind the hemisphere split is explained in detail in
 `docs/how_mc_events_are_obtained.md`. Later labs build on the skills from
 this task: Lab 2 compares the data to a Monte-Carlo expectation, Lab 3 runs a
 point-source search across the whole sky, and the final assignment
