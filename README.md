@@ -24,7 +24,7 @@ provides them during the course.
 
 ## Getting started
 
-Start with [`docs/getting_started.md`](getting_started.md): it covers
+Start with [`docs/getting_started.md`](docs/getting_started.md): it covers
 installing the required Python packages, downloading the data, and your
 first data-reading task.
 
